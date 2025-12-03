@@ -13,7 +13,7 @@ export default function ComingSoon() {
     if (!email) return
     
     setIsSubmitting(true)
-    const response = await fetch('https://ganimi.app/api/v1/waitlist/student', {
+    const response = await fetch('https://ganimi.app/api/waitlist/students', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
