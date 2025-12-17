@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 interface LifeStage {
   id: string
@@ -432,14 +431,21 @@ export default function HomePage() {
       {/* Header - Minimal */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#0086c3]/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Image 
-            src="/logo.png" 
-            alt="Ganimi" 
-            width={120} 
-            height={40}
-            className="h-8 w-auto"
-          />
-          <div className="h-8 w-1 bg-gradient-to-b from-[#0086c3] to-[#00a8e8] rounded-full" />
+          <h1 className="text-2xl md:text-3xl font-display font-bold" style={{ color: '#001f3f' }}>
+            Ganimi
+          </h1>
+          <button
+            onClick={() => {
+              const finalSection = document.querySelector('[data-section="' + lifeStages.length + '"]') as HTMLElement
+              if (finalSection) {
+                finalSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            className="px-6 py-2.5 md:px-8 md:py-3 rounded-full bg-gradient-to-r from-[#0086c3] to-[#00a8e8] text-white font-semibold text-sm md:text-base hover:from-[#006b9f] hover:to-[#0086c3] hover:shadow-lg transition-all duration-300 hover:scale-105"
+            style={{ boxShadow: '0 4px 15px rgba(0, 134, 195, 0.25)' }}
+          >
+            Get started
+          </button>
         </div>
       </header>
 
@@ -589,97 +595,102 @@ export default function HomePage() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(0, 168, 232, 0.15) 0%, transparent 70%)', animationDelay: '2s' }} />
         </div>
 
-        <div className="max-w-3xl mx-auto text-center space-y-16 relative z-10">
-          {/* Icon cluster */}
-          <div className={`flex justify-center gap-4 transition-all duration-1200 ease-out ${
-            visibleSections.has(lifeStages.length)
-              ? 'opacity-100 scale-100'
-              : 'opacity-0 scale-75'
-          }`}>
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00a8e8] flex items-center justify-center text-white shadow-xl" style={{ boxShadow: '0 8px 25px rgba(0, 134, 195, 0.3)' }}>
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#00a8e8] to-[#0086c3] flex items-center justify-center text-white shadow-xl" style={{ marginTop: '2rem', boxShadow: '0 8px 25px rgba(0, 168, 232, 0.3)' }}>
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#0086c3] to-[#006b9f] flex items-center justify-center text-white shadow-xl" style={{ boxShadow: '0 8px 25px rgba(0, 134, 195, 0.3)' }}>
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Reflective Content */}
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          {/* Hero Content */}
           <div className={`space-y-12 transition-all duration-1000 ease-out ${
             visibleSections.has(lifeStages.length)
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
-          }`}
-          style={{ transitionDelay: visibleSections.has(lifeStages.length) ? '400ms' : '0ms' }}
-          >
-            <div className="space-y-8">
-              <p className="text-xl md:text-2xl text-foreground font-light leading-relaxed">
-                Talent, interest, and passion leave patterns over time.
-              </p>
-              <p className="text-lg md:text-xl text-muted font-light leading-relaxed max-w-2xl mx-auto">
-                Decisions don't have to be guesses.
-              </p>
-              <p className="text-base md:text-lg text-muted/80 font-light leading-relaxed max-w-xl mx-auto">
-                Clarity can be built, not forced.
-              </p>
+          }`}>
+            {/* Brand Title */}
+            <div className="mb-6">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-display font-bold" style={{ color: '#001f3f' }}>Ganimi</span>
             </div>
 
-            {/* Divider */}
-            <div 
-              className={`w-32 h-1 bg-gradient-to-r from-[#0086c3] via-[#00a8e8] to-[#0086c3] mx-auto my-16 rounded-full transition-all duration-1000 ${
-                visibleSections.has(lifeStages.length)
-                  ? 'opacity-100 scale-x-100'
-                  : 'opacity-0 scale-x-0'
-              }`}
-              style={{ 
-                transitionDelay: visibleSections.has(lifeStages.length) ? '800ms' : '0ms',
-                boxShadow: '0 4px 15px rgba(0, 134, 195, 0.4)'
-              }}
-            />
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#0086c3]/20 shadow-sm mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#0086c3]" />
+              <span className="text-[#0086c3] text-sm font-semibold">For Students & Families</span>
+            </div>
+
+            {/* Hero Headline */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight mb-6">
+              Guide children toward careers<br />
+              <span className="bg-gradient-to-r from-[#0086c3] to-[#00a8e8] bg-clip-text text-transparent">based on who they truly are.</span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mx-auto mb-12">
+              Most children choose careers based on pressure, trends, or fear. 
+              We help them choose based on <span className="text-[#0086c3] font-semibold">self-awareness</span>, <span className="text-[#0086c3] font-semibold">strengths</span>, and <span className="text-[#0086c3] font-semibold">passion</span>.
+            </p>
+
+            {/* Feature Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-[#0086c3]/10 shadow-sm hover:shadow-lg hover:border-[#0086c3]/30 transition-all duration-300 text-left">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0086c3]/10 to-[#00a8e8]/10 flex items-center justify-center text-[#0086c3] mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">Natural Abilities</h3>
+                <p className="text-muted text-sm leading-relaxed">Uncover innate talents and strengths that make each child unique.</p>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-[#0086c3]/10 shadow-sm hover:shadow-lg hover:border-[#0086c3]/30 transition-all duration-300 text-left">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0086c3]/10 to-[#00a8e8]/10 flex items-center justify-center text-[#0086c3] mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">Interests & Motivations</h3>
+                <p className="text-muted text-sm leading-relaxed">Discover what truly excites and drives them forward.</p>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-[#0086c3]/10 shadow-sm hover:shadow-lg hover:border-[#0086c3]/30 transition-all duration-300 text-left">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0086c3]/10 to-[#00a8e8]/10 flex items-center justify-center text-[#0086c3] mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">Learning Style</h3>
+                <p className="text-muted text-sm leading-relaxed">Understand behavioural traits and how they learn best.</p>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-[#0086c3]/10 shadow-sm hover:shadow-lg hover:border-[#0086c3]/30 transition-all duration-300 text-left">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0086c3]/10 to-[#00a8e8]/10 flex items-center justify-center text-[#0086c3] mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">Aligned Career Paths</h3>
+                <p className="text-muted text-sm leading-relaxed">Match them with careers that fit who they truly are.</p>
+              </div>
+            </div>
 
             {/* CTA Section */}
-            <div 
-              className={`space-y-8 transition-all duration-1000 ease-out ${
-                visibleSections.has(lifeStages.length)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: visibleSections.has(lifeStages.length) ? '1000ms' : '0ms' }}
-            >
-              <p className="text-base md:text-lg text-muted font-light">
-                Track your child's journey
+            <div className="space-y-6">
+              <p className="text-[#0086c3] font-semibold text-lg">
+                Be the first to experience the future of career discovery
               </p>
 
               {!isSubmitted ? (
-                <form 
-                  onSubmit={handleSubmit} 
-                  className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                >
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                   <input
                     type="email"
-                    placeholder="Your email"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 px-6 py-4 rounded-full bg-white/90 backdrop-blur-sm border-2 border-[#0086c3]/30 text-foreground placeholder:text-muted/60 focus:outline-none focus:border-[#0086c3] focus:shadow-lg transition-all duration-300 text-center sm:text-left"
-                    style={{ boxShadow: '0 2px 10px rgba(0, 134, 195, 0.1)' }}
+                    className="flex-1 px-6 py-4 rounded-full bg-white border-2 border-[#0086c3]/30 text-foreground placeholder:text-muted/60 focus:outline-none focus:border-[#0086c3] focus:shadow-lg transition-all duration-300"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-8 py-4 rounded-full bg-gradient-to-r from-[#0086c3] to-[#00a8e8] text-white font-semibold hover:from-[#006b9f] hover:to-[#0086c3] hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transform hover:scale-105"
+                    className="px-8 py-4 rounded-full bg-gradient-to-r from-[#0086c3] to-[#00a8e8] text-white font-semibold hover:from-[#006b9f] hover:to-[#0086c3] hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
                     style={{ boxShadow: '0 8px 25px rgba(0, 134, 195, 0.3)' }}
                   >
-                    {isSubmitting ? 'Sending...' : 'Join waitlist'}
+                    {isSubmitting ? 'Joining...' : 'Join Waitlist'}
                   </button>
                 </form>
               ) : (
@@ -687,9 +698,22 @@ export default function HomePage() {
                   <svg className="w-5 h-5 text-[#0086c3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-[#006b9f] font-semibold">Thank you. We'll be in touch soon.</span>
+                  <span className="text-[#006b9f] font-semibold">You're on the list! We'll notify you soon.</span>
                 </div>
               )}
+            </div>
+
+            {/* Quote Section */}
+            <div className="mt-16 pt-16 border-t border-[#0086c3]/10">
+              <div className="max-w-3xl mx-auto bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border-2 border-[#0086c3]/10">
+                <p className="text-lg md:text-xl text-foreground italic leading-relaxed mb-4">
+                  "Life is all about satisfaction. We help children lead successful and satisfied lives by connecting their <span className="text-[#0086c3] font-semibold not-italic">talent</span>, <span className="text-[#0086c3] font-semibold not-italic">interest</span>, and <span className="text-[#0086c3] font-semibold not-italic">passion</span>."
+                </p>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-[#0086c3] to-[#00a8e8] mx-auto mb-4" />
+                <p className="text-muted text-sm">
+                  On Ganimi, students discover their natural abilities, motivations, and behavioral traits — so they can make decisions today that lead to a future they'll love.
+                </p>
+              </div>
             </div>
           </div>
         </div>
