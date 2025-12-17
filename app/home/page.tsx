@@ -211,6 +211,7 @@ export default function HomePage() {
   }
 
   const getParallaxOffset = (sectionIndex: number) => {
+    if (typeof window === 'undefined') return 0
     const sectionHeight = window.innerHeight
     const sectionTop = sectionHeight * sectionIndex
     const offset = (scrollY - sectionTop) * 0.3
