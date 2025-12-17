@@ -1,0 +1,191 @@
+You are a senior product designer + UX writer + frontend engineer.
+
+You are building a single-page, scroll-based landing website for a SaaS platform that helps students discover the right career path by tracking their talent, interest, and passion over many years.
+
+The platform connects students, parents, and vendors (coaching centers, mentors, institutes). Vendors log student performance, feedback, and progress. Over time, this data reveals patterns that help guide career decisions.
+
+The target audience is parents, not students.
+
+The website must NOT look like a traditional SaaS page.
+No feature lists.
+No dashboards.
+No technical jargon (no “AI”, “ERP”, “analytics”, “algorithms”).
+
+🧠 Core Philosophy (Implicit, not stated directly)
+
+Most people are dissatisfied with their careers because their talent, interest, and passion were never connected.
+
+Parents don’t lack care — they lack visibility over time.
+
+Career clarity is not a one-time test. It is built slowly through observation.
+
+The website should make parents feel this truth without explaining it directly.
+
+🧩 Page Structure Requirements
+
+Single vertical scrolling page
+
+Each section represents a stage in a child’s life
+
+Each stage contains:
+
+A short emotional statement
+
+ONE powerful question directed at the parent
+
+Very minimal text per section
+
+Strong use of whitespace
+
+Smooth scroll transitions
+
+Calm, trustworthy tone (not flashy, not corporate)
+
+🧒 Life Stages & Questions (Must Be Included)
+1. Birth / Early Life
+
+Theme: Infinite potential
+
+Question:
+
+“What will your child be good at?”
+
+2. Early Childhood (Play & Curiosity)
+
+Theme: Exploration
+
+Question:
+
+“Which of these is just play — and which is a signal?”
+
+3. School Years (Marks & Comparison)
+
+Theme: Confusion between scores and ability
+
+Question:
+
+“Are marks showing ability… or just memory?”
+
+4. Teenage Years (Identity & Interest)
+
+Theme: Changing interests
+
+Question:
+
+“Is your child losing interest — or discovering it?”
+
+5. Subject / Stream Selection
+
+Theme: Pressure vs insight
+
+Question:
+
+“Is this choice based on understanding… or pressure?”
+
+6. Coaching, Courses & Certifications
+
+Theme: Too many inputs, no clarity
+
+Question:
+
+“Do you know which of these is actually helping your child?”
+
+7. Early Career / Adult Life
+
+Theme: Late realization
+
+Question:
+
+“What if this confusion started years ago?”
+
+🌱 Final Reveal Section (Very Subtle)
+
+Do NOT introduce the product early
+
+The reveal should feel like a natural conclusion, not a sales pitch
+
+Key ideas to communicate gently:
+
+Talent, interest, and passion leave patterns over time
+
+Decisions don’t have to be guesses
+
+Clarity can be built, not forced
+
+Suggested tone:
+
+Reflective. Calm. Reassuring.
+
+🔘 Call To Action (Important)
+
+CTA must feel safe and low-commitment
+
+No urgency language
+
+No pricing or demos
+
+Acceptable CTA examples:
+
+“Track your child’s journey”
+
+“See how clarity is built over time”
+
+“Understand your child beyond marks”
+
+CTA should lead to:
+
+Email capture OR
+
+Early access / waitlist signup
+
+🎨 Visual & Interaction Guidelines
+
+Soft, emotionally neutral color palette
+
+Each life stage can subtly change background tone
+
+Simple illustrations or symbolic visuals (not cartoons)
+
+Smooth easing and scroll-based animations
+
+Mobile-first design
+
+No loud gradients, no aggressive branding
+
+🧪 Output Expectations from You (AI Agent)
+
+You should produce:
+
+Complete page layout structure
+
+Exact copy text for each section
+
+Component breakdown (hero sections, scroll sections, CTA)
+
+Frontend implementation (React / Next.js preferred)
+
+Smooth scrolling and subtle animations
+
+Clean, production-ready code
+
+🚫 Explicitly Avoid
+
+Feature lists
+
+Pricing tables
+
+Testimonials (at this stage)
+
+Technical explanations
+
+Fear-based language
+
+Corporate buzzwords
+
+✅ Success Criteria
+
+A parent scrolling the page should think:
+
+“I never looked at my child’s journey this way.”
+
+Only after that realization should they feel comfortable signing up.
