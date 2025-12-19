@@ -1,8 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/home/page": "app/home/page.js",
-  "/product-and-services/page": "app/product-and-services/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/about/page": "app/about/page.js",
-  "/downloads/page": "app/downloads/page.js"
+  "/home/page": "app/home/page.js"
 }

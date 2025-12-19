@@ -85,9 +85,9 @@ export default function HomePage() {
       <Navbar onGetStartedClick={scrollToSurvey} />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-6 py-24 bg-gradient-to-br from-[#00bcd4] via-[#4dd0e1] to-[#00bcd4] relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-24 pb-0 bg-gradient-to-br from-[#00bcd4] via-[#4dd0e1] to-[#00bcd4] relative overflow-visible">
         {/* Decorative Background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%)' }} />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)', animationDelay: '2s' }} />
         </div>
@@ -121,6 +121,27 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* Success and Satisfaction Images */}
+        {/* Success Image - Left */}
+        <Image
+          src="/success.png"
+          alt="Success"
+          width={448}
+          height={576}
+          className="absolute bottom-0 left-0 sm:left-2 md:left-8 w-28 h-36 sm:w-40 sm:h-52 md:w-72 md:h-96 lg:w-96 lg:h-[32rem] xl:w-[28rem] xl:h-[36rem] object-contain object-bottom drop-shadow-2xl pointer-events-none z-30 opacity-75"
+          priority
+        />
+        
+        {/* Satisfaction Image - Right */}
+        <Image
+          src="/satisfaction.png"
+          alt="Satisfaction"
+          width={448}
+          height={576}
+          className="absolute bottom-0 right-0 sm:right-2 md:right-8 w-28 h-36 sm:w-40 sm:h-52 md:w-72 md:h-96 lg:w-96 lg:h-[32rem] xl:w-[28rem] xl:h-[36rem] object-contain object-bottom drop-shadow-2xl pointer-events-none z-30 opacity-75"
+          priority
+        />
       </section>
 
       {/* Survey Section */}
@@ -206,7 +227,7 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-              Our <span className="bg-gradient-to-r from-[#0086c3] to-[#00bcd4] bg-clip-text text-transparent">Concept</span>
+              Our <span className="bg-gradient-to-r from-[#0086c3] to-[#00bcd4] bg-clip-text text-transparent">Innovative Concept</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Understanding something begins with exposure, grows through engagement, evolves with tracking and monitoring, and culminates in success
@@ -227,12 +248,99 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Description Box */}
-          <div className="mt-12 md:mt-16 max-w-4xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg">
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center">
-                <span className="font-semibold text-[#0086c3]">Ganimi connects</span> students with opportunities to discover their path through structured exposure, meaningful engagement, comprehensive tracking, continuous monitoring, and ultimately, achieving success in their chosen fields.
-              </p>
+          {/* Key Points Explanation */}
+          <div className="mt-12 md:mt-16 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {/* 1. Connect */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Connect
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  We bridge the gap between students and diverse service providers, creating meaningful connections that open doors to new opportunities and pathways.
+                </p>
+              </div>
+
+              {/* 2. Exposure */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Exposure
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Students discover diverse fields and possibilities they never knew existed, broadening their horizons and helping them explore the full spectrum of life's opportunities.
+                </p>
+              </div>
+
+              {/* 3. Engage */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Engage
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Through active participation in various categories and activities, students immerse themselves in hands-on experiences that transform curiosity into genuine interest and skill.
+                </p>
+              </div>
+
+              {/* 4. Track */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Track
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  We meticulously document each student's journey, capturing their progress, achievements, and milestones to provide a comprehensive view of their development.
+                </p>
+              </div>
+
+              {/* 5. Monitor */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Monitor
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Through continuous assessment and data-driven insights, we identify areas for improvement and suggest optimized pathways to help students reach their full potential.
+                </p>
+              </div>
+
+              {/* 6. Success */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 border-2 border-[#0086c3]/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0086c3] to-[#00bcd4] flex items-center justify-center mb-5">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3">
+                  Success
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By integrating all these elements, students discover their true calling and build a future filled with both professional achievement and personal fulfillment.
+                </p>
+              </div>
             </div>
           </div>
         </div>
