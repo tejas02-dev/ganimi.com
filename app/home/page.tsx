@@ -81,7 +81,7 @@ export default function HomePage() {
   const progress = ((currentQuestion + 1) / surveyQuestions.length) * 100
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 overflow-x-hidden">
       <Navbar onGetStartedClick={scrollToSurvey} />
 
       {/* Hero Section */}

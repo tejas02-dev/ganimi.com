@@ -34,8 +34,8 @@ export default function Navbar({ onGetStartedClick }: NavbarProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#0086c3]/10 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-        <Link href="/home" className="text-2xl md:text-3xl font-display font-bold" style={{ color: '#001f3f' }}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4 flex items-center justify-between gap-2 md:gap-4">
+        <Link href="/home" className="text-xl sm:text-2xl md:text-3xl font-display font-bold whitespace-nowrap" style={{ color: '#001f3f' }}>
           Ganimi
         </Link>
         
@@ -113,7 +113,7 @@ export default function Navbar({ onGetStartedClick }: NavbarProps) {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/98 backdrop-blur-md border-b border-[#0086c3]/10 shadow-lg">
-          <nav className="flex flex-col px-6 py-4 space-y-4">
+          <nav className="flex flex-col px-4 py-4 space-y-3">
             <Link 
               href="/home" 
               onClick={() => setIsMobileMenuOpen(false)}
