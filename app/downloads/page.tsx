@@ -1,6 +1,7 @@
 'use client'
 
 import Navbar from '../components/Navbar'
+import { GANIMI_PLAY_STORE_URL } from '../../lib/links'
 
 export default function DownloadsPage() {
   return (
@@ -100,8 +101,9 @@ export default function DownloadsPage() {
                 {/* Download Button */}
                 <div className="pt-4">
                   <a
-                    href="/Ganimi_App_V_1.0.apk"
-                    download="Ganimi_App_V_1.0.apk"
+                    href={GANIMI_PLAY_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#0086c3] to-[#00a8e8] text-white font-semibold text-lg hover:from-[#006b9f] hover:to-[#0086c3] hover:shadow-xl transition-all duration-300 hover:scale-105"
                     style={{ boxShadow: '0 8px 25px rgba(0, 134, 195, 0.3)' }}
                   >
